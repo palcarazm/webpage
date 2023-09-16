@@ -3,6 +3,8 @@ import { LangContext, Langs } from "../../plugins";
 import { Nav } from "react-bootstrap";
 import { AppRoutes } from "../../router";
 import { LinkContainer } from "react-router-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
 
 function getTranslation(lang) {
   switch (lang) {
@@ -14,14 +16,17 @@ function getTranslation(lang) {
   }
 }
 
-export function AppNavBar() {
+export function AppNavBar({ className = "" }) {
   const { langState } = useContext(LangContext);
   const translation = getTranslation(langState.lang);
   return (
-    <Nav variant="underline">
+    <Nav variant="underline" className={className}>
       <Nav.Item>
         <LinkContainer to={AppRoutes.projects}>
-          <Nav.Link className="text-body">{translation.projects}</Nav.Link>
+          <Nav.Link className="text-body">
+            <FontAwesomeIcon icon={faCode} className="me-2" />
+            {translation.projects}
+          </Nav.Link>
         </LinkContainer>
       </Nav.Item>
     </Nav>

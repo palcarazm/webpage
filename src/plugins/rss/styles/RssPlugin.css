@@ -1,0 +1,17 @@
+a.icon {
+  color: #4e3d42;
+  transition: transform 0.2s, filter 0.1s;
+}
+a.icon:hover {
+  transform: scale(1.2);
+  filter: brightness(0.9);
+}
+a.icon {
+  font-size: x-large;
+}
+a.icon[href*="linkedin.com"] {
+  color: #0e76a8;
+}
+a.icon[href*="github.com"] {
+  color: #171515;
+}

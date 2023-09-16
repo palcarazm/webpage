@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { MainLayout } from "../layouts";
 import { LangContext, Langs } from "../plugins";
+import { Section } from "../components/global";
 import { ProjectGrid } from "../components/projects";
 import { ProjectService } from "../assets/projects";
 
@@ -29,10 +30,12 @@ function ProjectsPage() {
 
   return (
     <MainLayout>
-      <h2 className="fs-5">{translation.contributions}</h2>
-      <ProjectGrid projects={contributions} className="mb-3" />
-      <h2 className="fs-5">{translation.owner}</h2>
-      <ProjectGrid projects={owns} className="mb-3" />
+      <Section title={translation.contributions}>
+        <ProjectGrid projects={contributions} />
+      </Section>
+      <Section title={translation.owner}>
+        <ProjectGrid projects={owns} />
+      </Section>
     </MainLayout>
   );
 }

@@ -5,14 +5,15 @@ import { AppRoutes } from "../../router";
 import { LinkContainer } from "react-router-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { faIdCard } from "@fortawesome/free-regular-svg-icons";
 
 function getTranslation(lang) {
   switch (lang) {
     case Langs.fr:
-      return { projects: "Projets" };
+      return { projects: "Projets", cv: "CV" };
     case Langs.es:
     default:
-      return { projects: "Proyectos" };
+      return { projects: "Proyectos", cv: "CV" };
   }
 }
 
@@ -26,6 +27,14 @@ export function AppNavBar({ className = "" }) {
           <Nav.Link className="text-body">
             <FontAwesomeIcon icon={faCode} className="me-2" />
             {translation.projects}
+          </Nav.Link>
+        </LinkContainer>
+      </Nav.Item>
+      <Nav.Item>
+        <LinkContainer to={AppRoutes.cv}>
+          <Nav.Link className="text-body">
+            <FontAwesomeIcon icon={faIdCard} className="me-2" />
+            {translation.cv}
           </Nav.Link>
         </LinkContainer>
       </Nav.Item>

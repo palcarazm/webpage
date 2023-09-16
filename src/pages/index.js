@@ -1,3 +1,4 @@
 import HomePage from "./HomePage";
 import ProjectsPage from "./ProjectsPage";
-export { HomePage, ProjectsPage };
+import CvPage from "./CvPage";
+export { HomePage, ProjectsPage, CvPage };

@@ -10,6 +10,10 @@ class AppRoutes {
   static get projects() {
     return "/projects";
   }
+
+  static get cv() {
+    return "/cv";
+  }
 }
 
 export default AppRoutes;

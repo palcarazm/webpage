@@ -6,6 +6,10 @@ class AppRoutes {
   static get home() {
     return "/";
   }
+
+  static get projects() {
+    return "/projects";
+  }
 }
 
 export default AppRoutes;

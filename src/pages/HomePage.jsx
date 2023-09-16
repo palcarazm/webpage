@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CenterLayout } from "../layouts";
 import { LangContext, LangPlugin, RssPlugin } from "../plugins";
 import { ProfileCard } from "../components/profile";
+import { AppNavBar } from "../components/navigation";
 
 function HomePage() {
   const { langState } = useContext(LangContext);
@@ -11,6 +12,8 @@ function HomePage() {
       <LangPlugin />
       <hr />
       <RssPlugin />
+      <hr />
+      <AppNavBar />
     </CenterLayout>
   );
 }

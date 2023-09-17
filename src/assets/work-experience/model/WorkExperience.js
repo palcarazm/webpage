@@ -1,25 +1,21 @@
-const dateFormatOptions = {
-  month: "short",
-  year: "numeric",
-};
+import TimelineObject from "../../models/TimelineObject";
 
-class WorkExperience {
+class WorkExperience extends TimelineObject {
   #job;
   #employer;
   #place;
   #website;
-  #start;
-  #end;
   #description;
-  #lang;
 
-  constructor(job, employer, place, website, start, end, description) {
+  constructor(job, employer, place, website, startDate, endDate, description) {
+    super(startDate, endDate);
+    if (!job) throw new Error("The object expect a job.");
     this.#job = job;
+    if (!employer) throw new Error("The object expect an employer.");
     this.#employer = employer;
+    if (!place) throw new Error("The object expect a place.");
     this.#place = place;
     this.#website = website;
-    this.#start = start;
-    this.#end = end;
     this.#description = description;
   }
 
@@ -35,31 +31,11 @@ class WorkExperience {
   get website() {
     return this.#website;
   }
-  get startDate() {
-    return this.#start;
-  }
-  get endDate() {
-    return this.#end;
-  }
   get description() {
     return this.#description;
   }
   get key() {
-    return `${this.#job}-${this.#employer}-${this.#start.toUTCString()}`;
-  }
-  get period() {
-    if (this.#end) {
-      return `${this.#start.toLocaleDateString(
-        this.#lang,
-        dateFormatOptions
-      )} - ${this.#end.toLocaleDateString(this.#lang, dateFormatOptions)}`;
-    } else {
-      return `${this.#start.toLocaleDateString(this.#lang, dateFormatOptions)}`;
-    }
-  }
-
-  set lang(lang) {
-    this.#lang = lang;
+    return `${this.#job}-${this.#employer}-${this.timestamp}`;
   }
 }
 

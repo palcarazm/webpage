@@ -8,10 +8,12 @@ import {
   WorkExperienceList,
   CertificateList,
   SoftSkillList,
+  SkillList,
 } from "../components/cv";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCertificate,
+  faCubes,
   faGraduationCap,
   faLanguage,
   faSuitcase,
@@ -27,6 +29,7 @@ function getTranslation(lang) {
         language: "Compétences linguistiques",
         certification: "Certifications professionnelles",
         softSkill: "Compétences non techniques",
+        skill: "Compétences numériques",
       };
     case Langs.es:
     default:
@@ -36,6 +39,7 @@ function getTranslation(lang) {
         language: "Competencias lingüísticas",
         certification: "Certificaciones profesionales",
         softSkill: "Competencias interpersonales",
+        skill: "Competencias digitales",
       };
   }
 }
@@ -100,6 +104,17 @@ function CvPage() {
         }
       >
         <SoftSkillList />
+      </Section>
+      <Section
+        closable={true}
+        title={
+          <>
+            <FontAwesomeIcon icon={faCubes} className="pe-2" />
+            {translation.skill}
+          </>
+        }
+      >
+        <SkillList />
       </Section>
     </MainLayout>
   );

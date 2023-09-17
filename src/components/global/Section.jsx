@@ -26,11 +26,7 @@ export function Section({ title, children, closable = false, open = true }) {
         <h2 className="fs-5 flex-grow-1 m-0 p-0">{title}</h2>
         {closable && <SectionIcon open={isOpen} />}
       </div>
-      {isOpen && (
-        <div className="border-start border-dark-subtle border-3 py-2">
-          {children}
-        </div>
-      )}
+      {isOpen && <div className="py-2">{children}</div>}
     </section>
   );
 }

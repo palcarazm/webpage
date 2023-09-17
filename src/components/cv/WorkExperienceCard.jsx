@@ -5,11 +5,11 @@ import { WorkExperience } from "../../assets/work-experience";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import { faLink, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { TimelineCard } from "./TimelineCard";
 
 export function WorkExperienceCard({ workExperience }) {
   return (
-    <div className="timeline-card">
-      <h3 className="m-0">{workExperience.job}</h3>
+    <TimelineCard title={workExperience.job}>
       {workExperience.website && (
         <div>
           <FontAwesomeIcon icon={faLink} className="pe-2" />
@@ -34,7 +34,7 @@ export function WorkExperienceCard({ workExperience }) {
         </div>
       </div>
       <div className="fw-light">{workExperience.description}</div>
-    </div>
+    </TimelineCard>
   );
 }
 

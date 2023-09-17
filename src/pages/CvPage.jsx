@@ -3,7 +3,6 @@ import { MainLayout } from "../layouts";
 import { LangContext, Langs } from "../plugins";
 import { Section } from "../components/global";
 import { WorkExperienceList } from "../components/cv";
-import "../components/cv/styles/cv.css";
 
 function getTranslation(lang) {
   switch (lang) {

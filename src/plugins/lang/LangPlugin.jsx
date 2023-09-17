@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Container } from "react-bootstrap";
 import { LangContext } from "./index";
 
 function setLang(e, callback) {
@@ -11,7 +10,7 @@ function LangPlugin() {
   const { es, fr } = useContext(LangContext);
 
   return (
-    <Container className="d-flex flex-row justify-content-center align-items-center">
+    <div className="d-flex flex-row justify-content-center align-items-center">
       <a
         onClick={(e) => setLang(e, es)}
         className="icon px-3 clickable"
@@ -26,7 +25,7 @@ function LangPlugin() {
       >
         <span className="fi fi-fr fis"></span>
       </a>
-    </Container>
+    </div>
   );
 }
 

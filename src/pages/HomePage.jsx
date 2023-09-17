@@ -8,11 +8,14 @@ function HomePage() {
   const { langState } = useContext(LangContext);
   return (
     <CenterLayout>
-      <ProfileCard lang={langState.lang} />
+      <div
+        className="bg-dark-subtle mb-2 shadow"
+        style={{ width: "fit-content", padding: "2rem" }}
+      >
+        <ProfileCard lang={langState.lang} />
+        <RssPlugin />
+      </div>
       <LangPlugin />
-      <hr />
-      <RssPlugin />
-      <hr />
       <AppNavBar />
     </CenterLayout>
   );

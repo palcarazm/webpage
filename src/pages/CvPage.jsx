@@ -7,6 +7,7 @@ import {
   LanguageList,
   WorkExperienceList,
   CertificateList,
+  SoftSkillList,
 } from "../components/cv";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -15,6 +16,7 @@ import {
   faLanguage,
   faSuitcase,
 } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-regular-svg-icons";
 
 function getTranslation(lang) {
   switch (lang) {
@@ -24,6 +26,7 @@ function getTranslation(lang) {
         education: "Éducation et formation",
         language: "Compétences linguistiques",
         certification: "Certifications professionnelles",
+        softSkill: "Compétences non techniques",
       };
     case Langs.es:
     default:
@@ -32,6 +35,7 @@ function getTranslation(lang) {
         education: "Educación y formation",
         language: "Competencias lingüísticas",
         certification: "Certificaciones profesionales",
+        softSkill: "Competencias interpersonales",
       };
   }
 }
@@ -85,6 +89,17 @@ function CvPage() {
         }
       >
         <CertificateList />
+      </Section>
+      <Section
+        closable={true}
+        title={
+          <>
+            <FontAwesomeIcon icon={faStar} className="pe-2" />
+            {translation.softSkill}
+          </>
+        }
+      >
+        <SoftSkillList />
       </Section>
     </MainLayout>
   );

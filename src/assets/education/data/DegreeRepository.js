@@ -5,7 +5,7 @@ import fr from "./fr";
 
 class DegreeRepository extends Repository {
   /**
-   * Retrive the requested number of records
+   * Retrieve the requested number of records
    * @param {String} lang Language to use
    * @param {Integer} num Desired number of records
    * @param {Function} sortFn Sorting function

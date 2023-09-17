@@ -1,14 +1,14 @@
 .timeline-card {
   padding-left: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
   position: relative;
 }
 .timeline-card::before {
   content: "";
   position: absolute;
   top: 0.25rem;
-  left: 0.75rem;
-  bottom: 0;
+  left: 0.5rem;
+  bottom: -0.25rem;
   width: 2px;
   transform: translateX(-50%);
   background: var(--bs-primary);
@@ -28,11 +28,14 @@
     var(--bs-secondary) 100%
   );
 }
+.timeline-card:last-of-type::before {
+  width: 0;
+}
 .timeline-card::after {
   content: "";
   position: absolute;
   top: 0.25rem;
-  left: 0.25rem;
+  left: 0rem;
   width: 1rem;
   height: 1rem;
   border-radius: 50%;

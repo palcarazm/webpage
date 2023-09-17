@@ -3,27 +3,33 @@ import PropTypes from "prop-types";
 import { WorkExperience } from "../../assets/work-experience";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendar } from "@fortawesome/free-regular-svg-icons";
+import { faBuilding, faCalendar } from "@fortawesome/free-regular-svg-icons";
 import { faLink, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { TimelineCard } from "./TimelineCard";
+import VerticalList from "../global/VerticalList";
 
 export function WorkExperienceCard({ workExperience }) {
   return (
     <TimelineCard title={workExperience.job}>
-      {workExperience.website && (
-        <div>
-          <FontAwesomeIcon icon={faLink} className="pe-2" />
-          <a
-            href={workExperience.website}
-            target="_blank"
-            className="text-decoration-none text-body"
-          >
+      <VerticalList className="fw-lighter">
+        {workExperience.website && (
+          <div>
+            <a
+              href={workExperience.website}
+              target="_blank"
+              className="text-decoration-none text-body"
+            >
+              <FontAwesomeIcon icon={faBuilding} className="pe-2" />
+              {workExperience.employer}
+            </a>
+          </div>
+        )}
+        {!workExperience.website && (
+          <div>
+            <FontAwesomeIcon icon={faBuilding} className="pe-2" />
             {workExperience.employer}
-          </a>
-        </div>
-      )}
-      {!workExperience.website && <div>{workExperience.employer}</div>}
-      <div className="d-flex justify-content-start fw-lighter">
+          </div>
+        )}
         <div className="text-capitalize pe-3">
           <FontAwesomeIcon icon={faCalendar} className="pe-2" />
           {workExperience.period}
@@ -32,7 +38,7 @@ export function WorkExperienceCard({ workExperience }) {
           <FontAwesomeIcon icon={faLocationDot} className="pe-2" />
           {workExperience.place}
         </div>
-      </div>
+      </VerticalList>
       <div className="fw-light">{workExperience.description}</div>
     </TimelineCard>
   );

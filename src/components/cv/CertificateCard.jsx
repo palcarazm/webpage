@@ -4,24 +4,35 @@ import { Certificate } from "../../assets/certifications";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
-import { faFileCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFileCircleCheck,
+  faLandmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { TimelineCard } from "./TimelineCard";
+import HorizontalList from "../global/HorizontalList";
 
 export function CertificateCard({ certificate }) {
   return (
     <TimelineCard title={certificate.certificate}>
-      <div>{certificate.entity}</div>
-      <div className="d-flex justify-content-start fw-lighter">
-        <div className="text-capitalize pe-3">
+      <HorizontalList className="fw-lighter" size="small">
+        <div>
+          <FontAwesomeIcon icon={faLandmark} className="pe-2" />
+          {certificate.entity}
+        </div>
+        <div className="text-capitalize ">
           <FontAwesomeIcon icon={faCalendar} className="pe-2" />
           {certificate.period}
         </div>
-        <div className="pe-3">
-          <a href={certificate.certificateLink} target="_blank">
+        <div>
+          <a
+            href={certificate.certificateLink}
+            target="_blank"
+            className="text-primary-emphasis"
+          >
             <FontAwesomeIcon icon={faFileCircleCheck} className="pe-2" />
           </a>
         </div>
-      </div>
+      </HorizontalList>
     </TimelineCard>
   );
 }

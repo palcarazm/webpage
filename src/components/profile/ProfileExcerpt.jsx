@@ -1,5 +1,6 @@
 import React from "react";
 import { Langs } from "../../plugins";
+import HorizontalList from "../global/HorizontalList";
 
 function getTranslation(lang) {
   switch (lang) {
@@ -14,8 +15,8 @@ function getTranslation(lang) {
 export function ProfileExcerpt({ lang, className = "" }) {
   const translation = getTranslation(lang);
   return (
-    <p className={className}>
-      {`${translation.job} | `}
+    <HorizontalList className={className}>
+      <div>{translation.job}</div>
       <a
         href="https://app.skillsclub.com/credential/27629-a9838cdc21b2d5259db36dfb40d56b9e2b07f41d0ba678c032e35fa8ed318203"
         target="_blank"
@@ -23,7 +24,7 @@ export function ProfileExcerpt({ lang, className = "" }) {
       >
         ISTQB© CTFL
       </a>
-      {` | ${translation.formation}`}
-    </p>
+      <div>{translation.formation}</div>
+    </HorizontalList>
   );
 }

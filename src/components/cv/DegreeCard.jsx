@@ -4,35 +4,34 @@ import { Degree } from "../../assets/education";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
-import { faLink, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faLandmark, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { TimelineCard } from "./TimelineCard";
+import VerticalList from "../global/VerticalList";
 
 export function DegreeCard({ degree }) {
   return (
     <TimelineCard title={degree.study}>
-      {degree.website && (
-        <div>
-          <FontAwesomeIcon icon={faLink} className="pe-2" />
+      <VerticalList className="fw-lighter">
+        {degree.website && (
           <a
             href={degree.website}
             target="_blank"
             className="text-decoration-none text-body"
           >
+            <FontAwesomeIcon icon={faLandmark} className="pe-2" />
             {degree.center}
           </a>
-        </div>
-      )}
-      {!degree.website && <div>{degree.center}</div>}
-      <div className="d-flex justify-content-start fw-lighter">
-        <div className="text-capitalize pe-3">
+        )}
+        {!degree.website && <div>{degree.center}</div>}
+        <div className="text-capitalize">
           <FontAwesomeIcon icon={faCalendar} className="pe-2" />
           {degree.period}
         </div>
-        <div className="pe-3">
+        <div>
           <FontAwesomeIcon icon={faLocationDot} className="pe-2" />
           {degree.place}
         </div>
-      </div>
+      </VerticalList>
     </TimelineCard>
   );
 }

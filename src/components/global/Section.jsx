@@ -16,13 +16,13 @@ export function Section({ title, children, closable = false, open = true }) {
   const toggle = () => setState((state) => (closable ? !state : state));
 
   return (
-    <section
-      className={`bg-body-tertiary p-3 mb-4 shadow ${
-        closable ? "clickable" : ""
-      }`}
-      onClick={toggle}
-    >
-      <div className="d-flex justify-content-start align-items-center">
+    <section className="bg-body-tertiary p-3 mb-4 shadow">
+      <div
+        className={`d-flex justify-content-start align-items-center ${
+          closable ? "clickable" : ""
+        }`}
+        onClick={toggle}
+      >
         <h2 className="fs-5 flex-grow-1 m-0 p-0">{title}</h2>
         {closable && <SectionIcon open={isOpen} />}
       </div>

@@ -12,10 +12,18 @@ function LangPlugin() {
 
   return (
     <Container className="d-flex flex-row justify-content-center align-items-center">
-      <a onClick={(e) => setLang(e, es)} className="icon px-3" title="Español">
+      <a
+        onClick={(e) => setLang(e, es)}
+        className="icon px-3 clickable"
+        title="Español"
+      >
         <span className="fi fi-es fis"></span>
       </a>
-      <a onClick={(e) => setLang(e, fr)} className="icon px-3" title="Français">
+      <a
+        onClick={(e) => setLang(e, fr)}
+        className="icon px-3 clickable"
+        title="Français"
+      >
         <span className="fi fi-fr fis"></span>
       </a>
     </Container>

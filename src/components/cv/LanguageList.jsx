@@ -10,7 +10,11 @@ export function LanguageList() {
   const languages = LanguageService.getAll(langState.lang);
 
   return (
-    <ListGroup variant="flush" className="mx-2">
+    <ListGroup
+      variant="flush"
+      className="mx-2"
+      style={{ "--bs-list-group-bg": "transparent" }}
+    >
       {languages.data.map((language) => (
         <LanguageCard key={language.key} language={language} />
       ))}

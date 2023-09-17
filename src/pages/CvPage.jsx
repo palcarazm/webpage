@@ -9,9 +9,11 @@ import {
   CertificateList,
   SoftSkillList,
   SkillList,
+  CourseList,
 } from "../components/cv";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faBook,
   faCertificate,
   faCubes,
   faGraduationCap,
@@ -30,6 +32,7 @@ function getTranslation(lang) {
         certification: "Certifications professionnelles",
         softSkill: "Compétences non techniques",
         skill: "Compétences numériques",
+        course: "Formation complémentaire",
       };
     case Langs.es:
     default:
@@ -40,6 +43,7 @@ function getTranslation(lang) {
         certification: "Certificaciones profesionales",
         softSkill: "Competencias interpersonales",
         skill: "Competencias digitales",
+        course: "Formación complementaria",
       };
   }
 }
@@ -115,6 +119,17 @@ function CvPage() {
         }
       >
         <SkillList />
+      </Section>
+      <Section
+        closable={true}
+        title={
+          <>
+            <FontAwesomeIcon icon={faBook} className="pe-2" />
+            {translation.course}
+          </>
+        }
+      >
+        <CourseList />
       </Section>
     </MainLayout>
   );

@@ -28,17 +28,19 @@ class TimelineObject extends TranslatedObject {
   get endDate() {
     return this.#endDate;
   }
+
+  get formattedStartDate() {
+    return this.#startDate.toLocaleDateString(this.lang, dateFormatOptions);
+  }
+  get formattedEndDate() {
+    return this.#endDate.toLocaleDateString(this.lang, dateFormatOptions);
+  }
+
   get period() {
     if (this.#endDate) {
-      return `${this.#startDate.toLocaleDateString(
-        this.lang,
-        dateFormatOptions
-      )} - ${this.#endDate.toLocaleDateString(this.lang, dateFormatOptions)}`;
+      return `${this.formattedStartDate} - ${this.formattedEndDate}`;
     } else {
-      return `${this.#startDate.toLocaleDateString(
-        this.lang,
-        dateFormatOptions
-      )}`;
+      return `${this.formattedStartDate}`;
     }
   }
 }

@@ -9,6 +9,7 @@ function AppRouter() {
       <Route path={AppRoutes.home} element={<HomePage />} />
       <Route path={AppRoutes.projects} element={<ProjectsPage />} />
       <Route path={AppRoutes.cv} element={<CvPage />} />
+      <Route path="/*" element={<HomePage />} />
     </Routes>
   );
 }

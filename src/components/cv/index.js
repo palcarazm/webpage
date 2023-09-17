@@ -1,3 +1,5 @@
+export * from "./CertificateList";
+export * from "./CertificateCard";
 export * from "./DegreeList";
 export * from "./DegreeCard";
 export * from "./LanguageList";

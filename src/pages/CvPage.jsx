@@ -2,9 +2,15 @@ import React, { useContext } from "react";
 import { MainLayout } from "../layouts";
 import { LangContext, Langs } from "../plugins";
 import { Section } from "../components/global";
-import { DegreeList, LanguageList, WorkExperienceList } from "../components/cv";
+import {
+  DegreeList,
+  LanguageList,
+  WorkExperienceList,
+  CertificateList,
+} from "../components/cv";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faCertificate,
   faGraduationCap,
   faLanguage,
   faSuitcase,
@@ -17,6 +23,7 @@ function getTranslation(lang) {
         workExperience: "Expérience professionnelle",
         education: "Éducation et formation",
         language: "Compétences linguistiques",
+        certification: "Certifications professionnelles",
       };
     case Langs.es:
     default:
@@ -24,6 +31,7 @@ function getTranslation(lang) {
         workExperience: "Experiencia laboral",
         education: "Educación y formation",
         language: "Competencias lingüísticas",
+        certification: "Certificaciones profesionales",
       };
   }
 }
@@ -66,6 +74,17 @@ function CvPage() {
         }
       >
         <LanguageList />
+      </Section>
+      <Section
+        closable={true}
+        title={
+          <>
+            <FontAwesomeIcon icon={faCertificate} className="pe-2" />
+            {translation.certification}
+          </>
+        }
+      >
+        <CertificateList />
       </Section>
     </MainLayout>
   );

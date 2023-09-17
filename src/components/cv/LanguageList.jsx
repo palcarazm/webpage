@@ -7,11 +7,11 @@ import { ListGroup } from "react-bootstrap";
 export function LanguageList() {
   const { langState } = useContext(LangContext);
 
-  const languages = LanguageService.get(langState.lang);
+  const languages = LanguageService.getAll(langState.lang);
 
   return (
     <ListGroup variant="flush" className="mx-2">
-      {languages.map((language) => (
+      {languages.data.map((language) => (
         <LanguageCard key={language.key} language={language} />
       ))}
     </ListGroup>

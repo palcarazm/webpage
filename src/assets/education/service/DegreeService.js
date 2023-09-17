@@ -1,16 +1,6 @@
+import Service from "../../models/Service";
 import DegreeRepository from "../data/DegreeRepository";
 
-class DegreeService {
-  constructor() {
-    throw new Error(
-      `DegreeService is a static class and can't be instantiated`
-    );
-  }
-
-  static get(lang) {
-    return DegreeRepository.get(lang).sort(
-      (previous, current) => current.startDate - previous.startDate
-    );
-  }
-}
+class DegreeService extends Service {}
+DegreeService.repository = DegreeRepository;
 export default DegreeService;

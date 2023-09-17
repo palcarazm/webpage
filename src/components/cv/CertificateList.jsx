@@ -6,9 +6,9 @@ import { CertificateCard } from "./CertificateCard";
 export function CertificateList() {
   const { langState } = useContext(LangContext);
 
-  const certificates = CertificateService.get(langState.lang);
+  const certificates = CertificateService.getAll(langState.lang);
 
-  return certificates.map((certificate) => (
+  return certificates.data.map((certificate) => (
     <CertificateCard key={certificate.key} certificate={certificate} />
   ));
 }

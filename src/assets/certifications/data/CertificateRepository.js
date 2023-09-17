@@ -1,4 +1,5 @@
 import { Langs } from "../../../plugins";
+import Repository from "../../models/Repository";
 import Certificate from "../model/Certificate";
 
 const certificates = [
@@ -11,14 +12,28 @@ const certificates = [
   ),
 ];
 
-class CertificateRepository {
-  constructor() {
-    throw new Error(
-      `CertificateRepository is a static class and can't be instantiated`
-    );
+class CertificateRepository extends Repository {
+  /**
+   * Retrive the requested number of records
+   * @param {String} lang Language to use
+   * @param {Integer} num Desired number of records
+   * @param {Function} sortFn Sorting function
+   * @returns {Array<Object>}
+   */
+  static get(lang, num, sortFn) {
+    return CertificateRepository.#get(lang).toSorted(sortFn).slice(0, num);
   }
 
-  static get(lang) {
+  /**
+   * Get the number of records
+   * @param {String} lang Language to use
+   * @returns {Integer}
+   */
+  static size(lang) {
+    CertificateRepository.#get(lang).length;
+  }
+
+  static #get(lang) {
     return certificates.map((certificate) => {
       certificate.lang = lang;
       return certificate;

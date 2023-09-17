@@ -1,16 +1,16 @@
+import Service from "../../models/Service";
 import CertificateRepository from "../data/CertificateRepository";
 
-class CertificateService {
-  constructor() {
-    throw new Error(
-      `CertificateService is a static class and can't be instantiated`
-    );
-  }
-
-  static get(lang) {
-    return CertificateRepository.get(lang).sort(
-      (previous, current) => current.startDate - previous.startDate
-    );
+class CertificateService extends Service {
+  /**
+   * Compare to object for sorting
+   * @param {Object} previous
+   * @param {Object} current
+   * @returns {Number}
+   */
+  static compare(previous, current) {
+    return current.startDate - previous.startDate;
   }
 }
+CertificateService.repository = CertificateRepository;
 export default CertificateService;

@@ -1,12 +1,7 @@
+import Singleton from "../../models/Singleton";
 import Project from "../model/Project";
 
-class ProjectRepository {
-  constructor() {
-    throw new Error(
-      `ProjectRepository is a static class and can't be instantiated`
-    );
-  }
-
+class ProjectRepository extends Singleton {
   static get() {
     return [
       new Project("creecros", "simple_logo_gen"),

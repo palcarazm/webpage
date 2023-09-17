@@ -1,11 +1,7 @@
+import Singleton from "../../models/Singleton";
 import ProjectRepository from "../data/ProjectRepository";
 
-class ProjectService {
-  constructor() {
-    throw new Error(
-      `ProjectService is a static class and can't be instantiated`
-    );
-  }
+class ProjectService extends Singleton {
   static get() {
     return ProjectRepository.get();
   }

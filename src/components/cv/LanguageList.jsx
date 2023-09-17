@@ -10,7 +10,7 @@ export function LanguageList() {
   const languages = LanguageService.get(langState.lang);
 
   return (
-    <ListGroup variant="flush">
+    <ListGroup variant="flush" className="mx-2">
       {languages.map((language) => (
         <LanguageCard key={language.key} language={language} />
       ))}

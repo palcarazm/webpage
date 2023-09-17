@@ -6,7 +6,7 @@ import { Col, ListGroup, ProgressBar, Row } from "react-bootstrap";
 export function LanguageCard({ language }) {
   return (
     <ListGroup.Item>
-      <Row>
+      <Row className="align-items-center">
         <Col xs={3} sm={2}>
           {language.language}
         </Col>

@@ -10,7 +10,7 @@ function MainLayout({ children }) {
       <div className="py-3 bg-dark-subtle">
         <ProfileHeader />
       </div>
-      <Container className="bg-body-tertiary">
+      <Container>
         <AppNavBar className={"justify-content-center pb-3"} />
         <main>{children}</main>
       </Container>

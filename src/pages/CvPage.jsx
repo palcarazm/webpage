@@ -35,6 +35,7 @@ function CvPage() {
   return (
     <MainLayout>
       <Section
+        closable={true}
         title={
           <>
             <FontAwesomeIcon icon={faSuitcase} className="pe-2" />
@@ -45,6 +46,7 @@ function CvPage() {
         <WorkExperienceList />
       </Section>
       <Section
+        closable={true}
         title={
           <>
             <FontAwesomeIcon icon={faGraduationCap} className="pe-2" />
@@ -55,6 +57,7 @@ function CvPage() {
         <DegreeList />
       </Section>
       <Section
+        closable={true}
         title={
           <>
             <FontAwesomeIcon icon={faLanguage} className="pe-2" />

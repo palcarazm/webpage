@@ -7,13 +7,12 @@ import {
   faFileCircleCheck,
   faLandmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { ListGroup } from "react-bootstrap";
 import HorizontalList from "../global/HorizontalList";
+import { TimelineCard } from "./TimelineCard";
 
 export function CourseCard({ course }) {
   return (
-    <ListGroup.Item>
-      <div>{course.course.label}</div>
+    <TimelineCard title={course.course.label}>
       <HorizontalList className="fw-lighter" size="small">
         <div>
           <FontAwesomeIcon icon={faLandmark} className="pe-2" />
@@ -33,7 +32,7 @@ export function CourseCard({ course }) {
           </a>
         </div>
       </HorizontalList>
-    </ListGroup.Item>
+    </TimelineCard>
   );
 }
 

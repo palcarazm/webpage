@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Skill } from "../../assets/skills";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle as faCircleFilled } from "@fortawesome/free-solid-svg-icons";
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { faCircle as faCircleEmpty } from "@fortawesome/free-regular-svg-icons";
 
 const Rating = React.memo(({ score, className }) => (
   <div className={className}>
     {[...Array(score)].map((_v, key) => (
-      <FontAwesomeIcon icon={faCircleFilled} key={key} className="ps-1" />
+      <FontAwesomeIcon icon={faCircleCheck} key={key} className="ps-1" />
     ))}
     {[...Array(5 - score)].map((_v, key) => (
       <FontAwesomeIcon icon={faCircleEmpty} key={key} className="ps-1" />

@@ -66,6 +66,11 @@
 .timeline-card .list-group {
   --bs-list-group-bg: transparent;
 }
-.timeline-card .list-group span {
+.timeline-card .list-group {
   font-size: small;
+  line-height: 1;
+  text-align: justify;
+}
+.timeline-card .list-group span {
+  font-size: smaller;
 }

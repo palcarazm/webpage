@@ -7,7 +7,7 @@ import "./styles/RssPlugin.css";
 
 function RssPlugin() {
   return (
-    <dic className="d-flex flex-row justify-content-center align-items-center">
+    <div className="d-flex flex-row justify-content-center align-items-center">
       <a href="mailto:pablo@alcarazm.es" className="icon px-3" title="E-Mail">
         <FontAwesomeIcon icon={faEnvelope} />
       </a>
@@ -27,7 +27,7 @@ function RssPlugin() {
       >
         <FontAwesomeIcon icon={faGithub} />
       </a>
-    </dic>
+    </div>
   );
 }
 

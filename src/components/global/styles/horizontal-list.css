@@ -6,6 +6,8 @@
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
-.horizontal-list > *:not(:last-child) {
-  border-right: 2px solid var(--bs-dark-border-subtle) !important;
+@media (min-width: 768px) {
+  .horizontal-list > *:not(:last-child) {
+    border-right: 2px solid var(--bs-dark-border-subtle) !important;
+  }
 }

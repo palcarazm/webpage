@@ -10,6 +10,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { TimelineCard } from "./TimelineCard";
 import HorizontalList from "../global/HorizontalList";
+import { Langs } from "../../plugins";
+
+function getTranslation(lang) {
+  switch (lang) {
+    case Langs.fr:
+      return { certificate: "Certificat" };
+    case Langs.es:
+    default:
+      return { certificate: "Certificado" };
+  }
+}
 
 export function CertificateCard({ certificate }) {
   return (
@@ -27,9 +38,10 @@ export function CertificateCard({ certificate }) {
           <a
             href={certificate.certificateLink}
             target="_blank"
-            className="text-primary-emphasis"
+            className="text-primary-emphasis text-decoration-none"
           >
             <FontAwesomeIcon icon={faFileCircleCheck} className="pe-2" />
+            {getTranslation(certificate.lang).certificate}
           </a>
         </div>
       </HorizontalList>

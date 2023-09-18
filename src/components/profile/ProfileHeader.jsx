@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ProfilePic } from "./ProfilePic";
 import { ProfileExcerpt } from "./ProfileExcerpt";
-import { LangContext, LangPlugin, RssPlugin } from "../../plugins";
+import { LangContext, RssPlugin } from "../../plugins";
 import { AppRoutes } from "../../router";
 import { Link } from "react-router-dom";
 
@@ -17,7 +17,6 @@ export function ProfileHeader() {
         <ProfileExcerpt lang={langState.lang} />
         <div className="d-flex flex-row justify-content-between align-items-center w-100">
           <RssPlugin />
-          <LangPlugin />
         </div>
       </div>
     </div>

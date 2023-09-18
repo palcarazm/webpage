@@ -44,16 +44,16 @@ function ThemePlugin() {
   const themeOptions = getThemeOptions(themeState.theme, langState.lang);
 
   return (
-    <a
+    <div
       onClick={(e) => {
         e.preventDefault;
         toggleTheme();
       }}
-      className="text-body px-3 clickable"
+      className="text-body clickable"
       title={themeOptions.label}
     >
       {themeOptions.icon}
-    </a>
+    </div>
   );
 }
 

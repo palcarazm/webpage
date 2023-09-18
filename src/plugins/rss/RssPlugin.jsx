@@ -7,8 +7,8 @@ import "./styles/RssPlugin.css";
 
 function RssPlugin() {
   return (
-    <div className="d-flex flex-row justify-content-center align-items-center">
-      <a href="mailto:pablo@alcarazm.es" className="icon px-3" title="E-Mail">
+    <div className="d-flex flex-row justify-content-center align-items-center mt-2">
+      <a href="mailto:pablo@alcarazm.es" className="icon pe-3" title="E-Mail">
         <FontAwesomeIcon icon={faEnvelope} />
       </a>
       <a
@@ -22,7 +22,7 @@ function RssPlugin() {
       <a
         href="https://github.com/palcarazm"
         target="_blank"
-        className="icon px-3"
+        className="icon ps-3"
         title="GitHub"
       >
         <FontAwesomeIcon icon={faGithub} />

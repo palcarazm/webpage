@@ -8,7 +8,7 @@ class ThemeLocalStorageService extends Singleton {
     return JSON.parse(localStorage.getItem(key));
   }
   static setTheme(theme) {
-    if (Themes.supported.includes(theme)) {
+    if (Themes.supported.includes(theme.theme)) {
       localStorage.setItem(key, JSON.stringify(theme));
     }
   }

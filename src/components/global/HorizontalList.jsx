@@ -6,7 +6,7 @@ import "./styles/horizontal-list.css";
 function HorizontalList({ className, size = "medium", children }) {
   return (
     <div
-      className={`d-flex flex-wrap horizontal-list ${className}`}
+      className={`d-flex flex-wrap flex-column flex-md-row horizontal-list ${className}`}
       style={{ fontSize: size }}
     >
       {children}

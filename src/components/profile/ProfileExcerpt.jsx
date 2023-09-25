@@ -12,10 +12,10 @@ function getTranslation(lang) {
   }
 }
 
-export function ProfileExcerpt({ lang, className = "" }) {
+export function ProfileExcerpt({ lang, className = "", size = "medium" }) {
   const translation = getTranslation(lang);
   return (
-    <HorizontalList className={className}>
+    <HorizontalList className={className} size={size}>
       <div>{translation.job}</div>
       <a
         href="https://app.skillsclub.com/credential/27629-a9838cdc21b2d5259db36dfb40d56b9e2b07f41d0ba678c032e35fa8ed318203"

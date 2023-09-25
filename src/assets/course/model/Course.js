@@ -5,6 +5,7 @@ class Course extends TimelineObject {
   #course;
   #entity;
   #courseLink;
+  #lang;
 
   constructor(course, entity, courseLink, startDate, endDate) {
     super(startDate, endDate);
@@ -31,6 +32,7 @@ class Course extends TimelineObject {
   }
   set lang(lang) {
     this.#course.lang = lang;
+    this.#lang = lang;
   }
 }
 

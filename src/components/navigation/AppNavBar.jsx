@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { LangContext, Langs } from "../../plugins";
+import { LangContext, LangPlugin, Langs, ThemePlugin } from "../../plugins";
 import { Nav } from "react-bootstrap";
 import { AppRoutes } from "../../router";
 import { LinkContainer } from "react-router-bootstrap";
@@ -37,6 +37,21 @@ export function AppNavBar({ className = "" }) {
             {translation.cv}
           </Nav.Link>
         </LinkContainer>
+      </Nav.Item>
+      <Nav.Item className="ms-4">
+        <Nav.Link as="div">
+          <LangPlugin lang={Langs.es} />
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link as="div">
+          <LangPlugin lang={Langs.fr} />
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item className="ms-2">
+        <Nav.Link as="div">
+          <ThemePlugin />
+        </Nav.Link>
       </Nav.Item>
     </Nav>
   );

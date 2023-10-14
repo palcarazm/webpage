@@ -1,4 +1,6 @@
 import {
+  faCube,
+  faDesktop,
   faTerminal,
   faVialCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
@@ -22,6 +24,24 @@ const categories = new Map()
       <FontAwesomeIcon icon={faVialCircleCheck} className="me-2" />,
       "Pruebas",
       "Testing"
+    )
+  )
+  .set(
+    "frameworks",
+    new Category(
+      "frameworks",
+      <FontAwesomeIcon icon={faCube} className="me-2" />,
+      "Frameworks",
+      "Frameworks"
+    )
+  )
+  .set(
+    "software",
+    new Category(
+      "software",
+      <FontAwesomeIcon icon={faDesktop} className="me-2" />,
+      "Software",
+      "Software"
     )
   );
 

@@ -4,17 +4,37 @@ import { Langs } from "../../../plugins";
 
 const es = [
   new WorkExperience(
-    "Analista funcional (BA)",
+    "Responsable funcional (BA)",
     "Sopra Steria",
     "Valencia - España",
     "http://www.soprasteria.com/",
-    new Date("2023-01-01"),
+    new Date("2024-01-01"),
     null,
     (
       <ListGroup variant="flush">
         <ListGroup.Item>
           <span className="text-body-secondary pe-2">
-            Ene. 2023 - Actualidad
+            Ene. 2024 - Actualidad
+          </span>
+          Rol transverso funcional interviniendo en varias aplicaciones de un
+          ecosistema complejo para garantizar la concepción funcional y dar
+          soporte al equipo funcional de cada aplicación.
+        </ListGroup.Item>
+      </ListGroup>
+    )
+  ),
+  new WorkExperience(
+    "Analista funcional (BA)",
+    "Sopra Steria",
+    "Valencia - España",
+    "http://www.soprasteria.com/",
+    new Date("2023-01-01"),
+    new Date("2023-12-31"),
+    (
+      <ListGroup variant="flush">
+        <ListGroup.Item>
+          <span className="text-body-secondary pe-2">
+            Ene. 2023 - Dic. 2023
           </span>
           Analista funcional en la adaptación de la SNCF al estándar de
           interoperatividad europeo (STI).
@@ -32,13 +52,15 @@ const es = [
     (
       <ListGroup variant="flush">
         <ListGroup.Item>
-          <span className="text-body-secondary pe-2">Abr. 2022 - Dec.2022</span>
+          <span className="text-body-secondary pe-2">
+            Abr. 2022 - Dic. 2022
+          </span>
           Ingeniero de pruebas en la aplicación de intercambios internacionales
           de Société General.
         </ListGroup.Item>
         <ListGroup.Item>
           <span className="text-body-secondary pe-2">
-            Sept. 2021 - Mar.2022
+            Sept. 2021 - Mar. 2022
           </span>
           Ingeniero de pruebas en la aplicación de soporte a clientes
           particulares de Énergie de France (EdF).

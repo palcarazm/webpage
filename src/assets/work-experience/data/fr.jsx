@@ -4,17 +4,37 @@ import { Langs } from "../../../plugins";
 
 const fr = [
   new WorkExperience(
-    "Analyste fonctionnel (BA)",
+    "Responsable fonctionnel (BA)",
     "Sopra Steria",
     "Valencia - Espagne",
     "http://www.soprasteria.com/",
-    new Date("2023-01-01"),
+    new Date("2024-01-01"),
     null,
     (
       <ListGroup variant="flush">
         <ListGroup.Item>
           <span className="text-body-secondary pe-2">
-            Ene. 2023 - Actualité
+            Jan. 2023 - Actualité
+          </span>
+          Rôle fonctionnel transverse intervenant sur plusieurs applications
+          d'un écosystème complexe pour assurer la conception fonctionnelle et
+          soutenir l'équipe fonctionnelle de chaque application.
+        </ListGroup.Item>
+      </ListGroup>
+    )
+  ),
+  new WorkExperience(
+    "Analyste fonctionnel (BA)",
+    "Sopra Steria",
+    "Valencia - Espagne",
+    "http://www.soprasteria.com/",
+    new Date("2023-01-01"),
+    new Date("2023-12-31"),
+    (
+      <ListGroup variant="flush">
+        <ListGroup.Item>
+          <span className="text-body-secondary pe-2">
+            Janv. 2023 - Déc. 2023
           </span>
           Analyste fonctionnel pour l'adaptation au standard de interopérabilité
           européen (STI) de SNCF Réseau.
@@ -32,13 +52,15 @@ const fr = [
     (
       <ListGroup variant="flush">
         <ListGroup.Item>
-          <span className="text-body-secondary pe-2">Abr. 2022 - Dec.2022</span>
+          <span className="text-body-secondary pe-2">
+            Abr. 2022 - Déc. 2022
+          </span>
           Ingénieur de test de software pour l'application d'échanges
           inter-banquières de Société General.
         </ListGroup.Item>
         <ListGroup.Item>
           <span className="text-body-secondary pe-2">
-            Sept. 2021 - Mar.2022
+            Sept. 2021 - Mar. 2022
           </span>
           Ingénieur de test de software pour l'application de support pour le
           Marché des a clients particuliers d'Énergie de France (EdF).

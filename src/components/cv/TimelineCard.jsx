@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./styles/timeline-card.css";
 
 export function TimelineCard({ title, children }) {
@@ -9,3 +10,8 @@ export function TimelineCard({ title, children }) {
     </div>
   );
 }
+
+TimelineCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};

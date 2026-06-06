@@ -10,11 +10,12 @@ function ThemeProvider({ children }) {
     initialState,
     initializer
   );
+  
   useEffect(() => {
     document
       ?.querySelector("body")
       ?.setAttribute("data-bs-theme", themeState.theme);
-    return () => {};
+    return undefined;
   }, [themeState]);
 
   function setTheme(theme) {
@@ -23,6 +24,7 @@ function ThemeProvider({ children }) {
       ThemeLocalStorageService.setTheme({ theme });
     }
   }
+  
   function toggleTheme() {
     setTheme(themeState.theme === Themes.light ? Themes.dark : Themes.light);
   }
@@ -31,11 +33,12 @@ function ThemeProvider({ children }) {
     <ThemeContext.Provider
       value={useMemo(
         () => ({ themeState, toggleTheme }),
-        [themeState, themeDispatcher]
+        [themeState]
       )}
     >
       {children}
     </ThemeContext.Provider>
   );
 }
+
 export default ThemeProvider;

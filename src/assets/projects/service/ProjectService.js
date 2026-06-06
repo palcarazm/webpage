@@ -8,7 +8,7 @@ class ProjectService extends Singleton {
 
   static getContributions() {
     return ProjectRepository.get().filter(
-      (project) => project.username != "palcarazm"
+      (project) => project.username !== "palcarazm"
     );
   }
 
@@ -18,4 +18,5 @@ class ProjectService extends Singleton {
     );
   }
 }
+
 export default ProjectService;

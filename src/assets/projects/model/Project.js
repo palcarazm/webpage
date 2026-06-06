@@ -1,33 +1,60 @@
 class Project {
   #username;
   #repo;
+  #npmPackage;
+  #showNpmBadge;
+  #showJsDelivrBadge;
+  #showCoverallsBadge;
+  #showSonarBadges;
 
-  constructor(username, repo) {
+  constructor(
+    username, 
+    repo, 
+    npmPackage = null, 
+    showNpmBadge = false, 
+    showJsDelivrBadge = false, 
+    showCoverallsBadge = false, 
+    showSonarBadges = false
+  ) {
     this.#username = username;
     this.#repo = repo;
+    this.#npmPackage = npmPackage;
+    this.#showNpmBadge = showNpmBadge;
+    this.#showJsDelivrBadge = showJsDelivrBadge;
+    this.#showCoverallsBadge = showCoverallsBadge;
+    this.#showSonarBadges = showSonarBadges;
   }
 
   get username() {
     return this.#username;
   }
+  
   get repo() {
     return this.#repo;
   }
 
-  get link() {
-    return `https://github.com/${this.#username}/${this.#repo}`;
+  get npmPackage() {
+    return this.#npmPackage;
   }
 
-  #imgUrl(theme) {
-    return `https://github-readme-stats.vercel.app/api/pin/?username=${
-      this.#username
-    }&repo=${this.#repo}&border_radius=10&show_owner=true&theme=${theme}`;
+  get showNpmBadge() {
+    return this.#showNpmBadge;
   }
-  get lightImgUrl() {
-    return this.#imgUrl("light");
+
+  get showJsDelivrBadge() {
+    return this.#showJsDelivrBadge;
   }
-  get darkImgUrl() {
-    return this.#imgUrl("dark");
+
+  get showCoverallsBadge() {
+    return this.#showCoverallsBadge;
+  }
+
+  get showSonarBadges() {
+    return this.#showSonarBadges;
+  }
+
+  get link() {
+    return `https://github.com/${this.#username}/${this.#repo}`;
   }
 }
 

@@ -4,11 +4,11 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
     "./src/**/*.{js,jsx}",
-    "!./src/**/index.js", // Barrel export files
-    "!./src/main.jsx", // App config file
-    "!./src/**/main.js", // Module config files
-    "!./src/router/**/*", // Router config files
-    "!./src/**/routes/**/*", // Module routes files
+    "!./src/**/index.js",
+    "!./src/main.jsx",
+    "!./src/**/main.js",
+    "!./src/router/**/*",
+    "!./src/**/routes/**/*",
   ],
   coverageThreshold: {
     global: {
@@ -17,4 +17,8 @@ module.exports = {
       lines: 80,
     },
   },
+  transform: {
+    '^.+\\.[jt]sx?$': 'babel-jest',
+  },
+  moduleFileExtensions: ['js', 'jsx', 'json', 'node'],
 };

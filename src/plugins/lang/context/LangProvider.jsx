@@ -9,6 +9,7 @@ function LangProvider({ children }) {
     initialState,
     initializer
   );
+  
   function es() {
     langDispatcher({ type: LangActions.set, payload: { lang: Langs.es } });
   }
@@ -21,11 +22,12 @@ function LangProvider({ children }) {
     <LangContext.Provider
       value={useMemo(
         () => ({ langState, es, fr }),
-        [langState, langDispatcher]
+        [langState]
       )}
     >
       {children}
     </LangContext.Provider>
   );
 }
+
 export default LangProvider;

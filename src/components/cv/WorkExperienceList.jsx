@@ -9,6 +9,7 @@ const options = { initial: 2, increment: 2 };
 export function WorkExperienceList() {
   const { langState } = useContext(LangContext);
   const [numResults, setNumResults] = useState(options.initial);
+  
   function loadMore() {
     setNumResults((c) => c + options.increment);
   }
